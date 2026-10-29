@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" width="100%" alt="Header: Classic Anatomical & Computational Brain" />
+  <img src="assets/spikes.svg" width="100%" alt="spikes: Classic Anatomical & Computational Brain" />
 </p>
 
 <p align="center">
