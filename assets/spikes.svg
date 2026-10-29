@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" height="100%">
+  <defs>
+    <!-- Soft Ivory / Archival Paper Gradient -->
+    <linearGradient id="paper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF9F6" />
+      <stop offset="60%" stop-color="#F3EFEA" />
+      <stop offset="100%" stop-color="#E8E3DC" />
+    </linearGradient>
+
+    <!-- Asymmetrical Ink & Watercolour Smudges -->
+    <radialGradient id="ink-cloud-1" cx="32%" cy="48%" r="32%">
+      <stop offset="0%" stop-color="#2C302E" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#6E7A85" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="ochre-burst" cx="48%" cy="42%" r="38%">
+      <stop offset="0%" stop-color="#B59B7C" stop-opacity="0.22" />
+      <stop offset="55%" stop-color="#9E7B66" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="slate-drift" cx="68%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#6E7A85" stop-opacity="0.18" />
+      <stop offset="65%" stop-color="#8FA0AE" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Smooth Fade-In / Fade-Out Mask for the Propagating Spike Train -->
+    <linearGradient id="spike-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="12%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="88%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <mask id="spike-window">
+      <rect x="410" y="25" width="470" height="190" fill="url(#spike-fade)" />
+    </mask>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="300" rx="8" fill="url(#paper)" />
+
+  <!-- Subtle Distressed Border -->
+  <rect x="12" y="12" width="876" height="276" rx="4" fill="none" stroke="#2C302E" stroke-width="0.6" stroke-opacity="0.2" />
+  <path d="M 16,25 L 16,16 L 35,16 M 884,25 L 884,16 L 865,16 M 16,275 L 16,284 L 35,284 M 884,275 L 884,284 L 865,284" fill="none" stroke="#2C302E" stroke-width="1.2" stroke-opacity="0.45" />
+
+  <!-- Background Atmospheric Washes -->
+  <ellipse cx="290" cy="140" rx="240" ry="130" fill="url(#ink-cloud-1)" transform="rotate(-8 290 140)" />
+  <circle cx="440" cy="125" r="230" fill="url(#ochre-burst)" />
+  <ellipse cx="620" cy="145" rx="260" ry="120" fill="url(#slate-drift)" transform="rotate(12 620 145)" />
+
+  <!-- BACKGROUND LAYER: Lorenz Strange Attractor & Chaotic Phase Loops -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 260,150 C 180,40 380,10 420,120 C 460,230 680,220 620,90 C 560,-10 390,60 440,150 C 490,240 740,180 660,60" stroke="#B59B7C" stroke-width="0.7" stroke-opacity="0.4" stroke-dasharray="4,2" />
+    <path d="M 240,130 C 190,60 360,30 410,125 C 460,220 640,200 600,95 C 560,10 410,70 450,145 C 490,220 710,150 680,45" stroke="#6E7A85" stroke-width="0.5" stroke-opacity="0.35" />
+    <path d="M 310,180 C 210,110 320,15 435,110 C 550,205 670,130 580,50 C 490,-30 370,120 480,185" stroke="#9E7B66" stroke-width="0.6" stroke-opacity="0.3" />
+  </g>
+
+  <!-- ANIMATED SPIKE TRAIN & RASTER PLOT (Propagating to the right) -->
+  <g mask="url(#spike-window)">
+    <!-- Subtle Firing Threshold (V_th) & Resting Potential (V_rest) Reference Guides -->
+    <line x1="410" y1="108" x2="880" y2="108" stroke="#6E7A85" stroke-width="0.4" stroke-dasharray="3,3" stroke-opacity="0.4" />
+    <line x1="410" y1="120" x2="880" y2="120" stroke="#9E7B66" stroke-width="0.4" stroke-dasharray="1,4" stroke-opacity="0.35" />
+
+    <!-- Seamless 240px Repeating Tile Moving Right -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" from="-240 0" to="0 0" dur="5.5s" repeatCount="indefinite" />
+
+      <!-- Intracellular Membrane Potential V_m(t): EPSP ramp -> Vertical Spike -> AHP Undershoot -> Recovery -->
+      <!-- Tile 1, 2, 3, 4 (spanning x = 360 to 1320 so -240 shift stays seamlessly filled) -->
+      <path d="M 360,120 
+               C 372,120 378,113 386,112 L 387,44 L 388.5,135 C 392,135 398,120 408,120
+               C 415,120 418,115 423,115 C 427,115 430,120 436,120
+               C 444,120 450,111 456,110 L 457,40 L 458.2,132 C 460,126 462,114 464,112 L 465,46 L 466.2,133 C 468,127 470,115 472,113 L 473,52 L 474.5,138 C 480,138 488,120 502,120
+               C 510,120 514,116 518,116 C 522,116 525,120 532,120
+               C 540,120 544,112 548,111 L 549,42 L 550.2,134 C 553,125 556,113 558,112 L 559,48 L 560.5,137 C 566,137 574,120 584,120
+               L 600,120
+               C 612,120 618,113 626,112 L 627,44 L 628.5,135 C 632,135 638,120 648,120
+               C 655,120 658,115 663,115 C 667,115 670,120 676,120
+               C 684,120 690,111 696,110 L 697,40 L 698.2,132 C 700,126 702,114 704,112 L 705,46 L 706.2,133 C 708,127 710,115 712,113 L 713,52 L 714.5,138 C 720,138 728,120 742,120
+               C 750,120 754,116 758,116 C 762,116 765,120 772,120
+               C 780,120 784,112 788,111 L 789,42 L 790.2,134 C 793,125 796,113 798,112 L 799,48 L 800.5,137 C 806,137 814,120 824,120
+               L 840,120
+               C 852,120 858,113 866,112 L 867,44 L 868.5,135 C 872,135 878,120 888,120
+               C 895,120 898,115 903,115 C 907,115 910,120 916,120
+               C 924,120 930,111 936,110 L 937,40 L 938.2,132 C 940,126 942,114 944,112 L 945,46 L 946.2,133 C 948,127 950,115 952,113 L 953,52 L 954.5,138 C 960,138 968,120 982,120
+               C 990,120 994,116 998,116 C 1002,116 1005,120 1012,120
+               C 1020,120 1024,112 1028,111 L 1029,42 L 1030.2,134 C 1033,125 1036,113 1038,112 L 1039,48 L 1040.5,137 C 1046,137 1054,120 1064,120
+               L 1080,120
+               C 1092,120 1098,113 1106,112 L 1107,44 L 1108.5,135 C 1112,135 1118,120 1128,120
+               C 1135,120 1138,115 1143,115 C 1147,115 1150,120 1156,120
+               C 1164,120 1170,111 1176,110 L 1177,40 L 1178.2,132 C 1180,126 1182,114 1184,112 L 1185,46 L 1186.2,133 C 1188,127 1190,115 1192,113 L 1193,52 L 1194.5,138 C 1200,138 1208,120 1222,120" fill="none" stroke="#9E7B66" stroke-width="1.15" stroke-opacity="0.85" stroke-linejoin="round" stroke-linecap="round" />
+
+      <!-- Multi-Unit Spike Raster Ticks (Cortical Layer II/III & Layer V Population Activity) -->
+      <path d="M 387,30 v 7 M 457,30 v 7 M 465,30 v 7 M 473,30 v 7 M 549,30 v 7 M 559,30 v 7
+               M 627,30 v 7 M 697,30 v 7 M 705,30 v 7 M 713,30 v 7 M 789,30 v 7 M 799,30 v 7
+               M 867,30 v 7 M 937,30 v 7 M 945,30 v 7 M 953,30 v 7 M 1029,30 v 7 M 1039,30 v 7
+               M 1107,30 v 7 M 1177,30 v 7 M 1185,30 v 7 M 1193,30 v 7" fill="none" stroke="#2C302E" stroke-width="1.1" stroke-opacity="0.65" />
+
+      <path d="M 374,146 v 6 M 392,146 v 6 M 423,146 v 6 M 458,146 v 6 M 466,146 v 6 M 495,146 v 6 M 518,146 v 6 M 550,146 v 6 M 572,146 v 6
+               M 614,146 v 6 M 632,146 v 6 M 663,146 v 6 M 698,146 v 6 M 706,146 v 6 M 735,146 v 6 M 758,146 v 6 M 790,146 v 6 M 812,146 v 6
+               M 854,146 v 6 M 872,146 v 6 M 903,146 v 6 M 938,146 v 6 M 946,146 v 6 M 975,146 v 6 M 998,146 v 6 M 1030,146 v 6 M 1052,146 v 6
+               M 1094,146 v 6 M 1112,146 v 6 M 1143,146 v 6 M 1178,146 v 6 M 1186,146 v 6" fill="none" stroke="#6E7A85" stroke-width="0.9" stroke-opacity="0.55" />
+
+      <path d="M 389,156 v 6 M 404,156 v 6 M 455,156 v 6 M 463,156 v 6 M 471,156 v 6 M 478,156 v 6 M 547,156 v 6 M 557,156 v 6
+               M 629,156 v 6 M 644,156 v 6 M 695,156 v 6 M 703,156 v 6 M 711,156 v 6 M 718,156 v 6 M 787,156 v 6 M 797,156 v 6
+               M 869,156 v 6 M 884,156 v 6 M 935,156 v 6 M 943,156 v 6 M 951,156 v 6 M 958,156 v 6 M 1027,156 v 6 M 1037,156 v 6
+               M 1109,156 v 6 M 1124,156 v 6 M 1175,156 v 6 M 1183,156 v 6 M 1191,156 v 6" fill="none" stroke="#B59B7C" stroke-width="1.0" stroke-opacity="0.6" />
+    </g>
+  </g>
+
+  <!-- LEFT / CENTER: Tangled Charcoal Anatomical Brain Sketch (Multi-pass scratchy ink) -->
+  <g fill="none" stroke="#2C302E" stroke-linecap="round">
+    <!-- Frontal & Parietal Lobe — Heavy, overlapping frantic sketch strokes -->
+    <path d="M 225,145 C 210,105 235,62 285,48 C 335,34 395,38 445,58 C 410,42 340,30 275,52 C 225,68 205,115 230,152 C 245,175 285,182 325,178" stroke-width="1.3" stroke-opacity="0.75" />
+    <path d="M 220,138 C 215,95 250,55 305,44 C 360,33 425,45 465,72 C 420,48 355,38 295,48 C 240,58 218,105 228,148" stroke-width="0.7" stroke-opacity="0.5" />
+    
+    <!-- Chaotic Gyri & Sulci (Internal tangled folds) -->
+    <path d="M 245,105 C 265,75 315,72 335,98 C 355,124 305,145 275,132 C 245,119 285,85 325,88 C 365,91 385,62 425,75" stroke-width="1.1" stroke-opacity="0.65" />
+    <path d="M 235,125 C 260,145 310,155 345,135 C 380,115 355,75 395,68 C 435,61 440,105 410,125 C 380,145 425,168 465,145" stroke-width="0.9" stroke-opacity="0.6" />
+    <path d="M 280,62 C 305,85 275,115 315,122 C 355,129 375,92 415,102 C 455,112 435,152 395,158 C 355,164 325,148 295,168" stroke-width="1.0" stroke-opacity="0.55" />
+    <path d="M 255,82 C 290,58 345,65 368,95 C 391,125 345,162 385,175 C 425,188 455,155 485,135" stroke-width="0.6" stroke-opacity="0.45" />
+
+    <!-- Temporal Lobe & Cerebellum Tangle -->
+    <path d="M 295,168 C 275,162 265,138 295,128 C 325,118 365,135 375,162 C 385,189 335,195 310,182 C 285,169 325,152 365,168" stroke-width="1.2" stroke-opacity="0.7" />
+    <!-- Brainstem / Spinal Cord fraying downward -->
+    <path d="M 355,182 C 362,202 358,220 352,232 M 365,178 C 372,198 370,218 368,235 M 375,175 C 385,195 388,215 392,228 M 348,185 C 342,205 335,218 328,225" stroke-width="0.9" stroke-opacity="0.55" />
+    
+    <!-- Scratchy Da Vinci-style Cross-Hatching Shadings -->
+    <path d="M 250,140 L 265,158 M 256,138 L 272,156 M 262,135 L 278,154 M 268,133 L 285,152 M 275,132 L 292,150
+             M 340,165 L 355,185 M 346,162 L 362,182 M 352,160 L 368,180 M 358,158 L 375,178 M 365,155 L 382,175
+             M 305,52 L 318,72 M 312,50 L 325,70 M 319,49 L 332,68 M 326,48 L 339,66" stroke-width="0.5" stroke-opacity="0.35" />
+  </g>
+
+  <!-- CENTER TO RIGHT: The Unraveling (Dendritic Explosions & Wild Trajectories) -->
+  <!-- Faded Slate Wild Axons -->
+  <g fill="none" stroke="#6E7A85" stroke-linecap="round">
+    <path d="M 415,72 C 475,45 535,95 595,55 C 655,15 685,85 755,42 C 795,18 835,35 865,22" stroke-width="1.2" stroke-opacity="0.7" />
+    <path d="M 435,102 C 510,85 525,155 605,125 C 685,95 695,165 785,135 C 825,122 855,145 880,132" stroke-width="1.0" stroke-opacity="0.65" />
+    <path d="M 395,158 C 465,195 545,135 615,185 C 685,235 735,165 815,205 C 845,220 865,200 885,212" stroke-width="1.1" stroke-opacity="0.6" />
+    <!-- Secondary erratic branches -->
+    <path d="M 595,55 C 625,75 665,65 705,95 C 745,125 795,85 845,105" stroke-width="0.7" stroke-opacity="0.5" />
+    <path d="M 525,118 C 565,85 615,105 655,75 C 695,45 735,72 775,65" stroke-width="0.6" stroke-opacity="0.45" />
+    <path d="M 485,165 C 535,205 595,215 645,175 C 695,135 745,185 795,165" stroke-width="0.7" stroke-opacity="0.5" />
+  </g>
+
+  <!-- Warm Ochre / Terracotta Entropic Filaments -->
+  <g fill="none" stroke="#B59B7C" stroke-linecap="round">
+    <path d="M 385,68 C 455,22 515,78 585,35 C 655,-8 715,65 795,28" stroke-width="1.1" stroke-opacity="0.75" />
+    <path d="M 425,125 C 485,165 555,95 635,145 C 715,195 765,105 845,155" stroke-width="1.3" stroke-opacity="0.7" />
+    <path d="M 375,175 C 445,225 515,175 575,215 C 635,255 695,195 765,225" stroke-width="0.9" stroke-opacity="0.65" />
+  </g>
+
+  <!-- Sharp Charcoal Ink Splinters & Dendrites -->
+  <g fill="none" stroke="#2C302E" stroke-linecap="round">
+    <path d="M 445,58 C 495,75 545,42 605,78 C 665,114 725,52 785,88" stroke-width="0.9" stroke-opacity="0.65" />
+    <path d="M 465,145 C 515,122 575,168 645,132 C 715,96 755,152 825,118" stroke-width="1.1" stroke-opacity="0.7" />
+    <!-- Fractal dendritic tree branches splitting off -->
+    <path d="M 605,78 L 635,58 M 620,68 L 642,72 M 635,58 L 655,45 M 635,58 L 658,60" stroke-width="0.7" stroke-opacity="0.55" />
+    <path d="M 645,132 L 678,152 M 662,142 L 685,135 M 678,152 L 705,168 M 678,152 L 702,148" stroke-width="0.7" stroke-opacity="0.55" />
+    <path d="M 545,172 L 578,195 M 562,184 L 588,178 M 578,195 L 605,212" stroke-width="0.7" stroke-opacity="0.5" />
+    <path d="M 715,92 L 748,72 M 732,82 L 758,88 M 748,72 L 775,55" stroke-width="0.6" stroke-opacity="0.45" />
+  </g>
+
+  <!-- INK SPLATTERS, SYNAPTIC SPARKS & CHAOTIC NODES -->
+  <g>
+    <!-- Charcoal Ink Drops -->
+    <circle cx="485" cy="72" r="3.5" fill="#2C302E" opacity="0.8" />
+    <circle cx="489" cy="67" r="1.2" fill="#2C302E" opacity="0.6" />
+    <circle cx="552" cy="112" r="2.8" fill="#2C302E" opacity="0.75" />
+    <circle cx="605" cy="78" r="4" fill="#FAF9F6" stroke="#2C302E" stroke-width="1.4" opacity="0.85" />
+    <circle cx="645" cy="132" r="3.2" fill="#2C302E" opacity="0.8" />
+    <circle cx="652" cy="138" r="1" fill="#2C302E" opacity="0.5" />
+    <circle cx="725" cy="88" r="2.2" fill="#2C302E" opacity="0.7" />
+    <circle cx="785" cy="135" r="3" fill="#FAF9F6" stroke="#2C302E" stroke-width="1.2" opacity="0.75" />
+    <circle cx="215" cy="95" r="1.5" fill="#2C302E" opacity="0.4" />
+    <circle cx="205" cy="145" r="2" fill="#2C302E" opacity="0.35" />
+    <circle cx="235" cy="185" r="1.2" fill="#2C302E" opacity="0.45" />
+
+    <!-- Ochre / Sepia Sparks -->
+    <circle cx="445" cy="58" r="3" fill="#B59B7C" opacity="0.85" />
+    <circle cx="518" cy="65" r="2.2" fill="#9E7B66" opacity="0.75" />
+    <circle cx="548" cy="45" r="3.5" fill="#B59B7C" opacity="0.8" />
+    <circle cx="585" cy="145" r="4" fill="#FAF9F6" stroke="#B59B7C" stroke-width="1.5" opacity="0.85" />
+    <circle cx="635" cy="145" r="2.5" fill="#9E7B66" opacity="0.8" />
+    <circle cx="690" cy="58" r="3" fill="#B59B7C" opacity="0.75" />
+    <circle cx="745" cy="165" r="2.2" fill="#B59B7C" opacity="0.7" />
+    <circle cx="815" cy="105" r="1.8" fill="#9E7B66" opacity="0.6" />
+    <circle cx="840" cy="152" r="2.5" fill="#B59B7C" opacity="0.65" />
+
+    <!-- Slate Micro-Nodes & Dust -->
+    <circle cx="468" cy="145" r="2.5" fill="#6E7A85" opacity="0.8" />
+    <circle cx="525" cy="168" r="3" fill="#6E7A85" opacity="0.7" />
+    <circle cx="595" cy="55" r="3.2" fill="#FAF9F6" stroke="#6E7A85" stroke-width="1.4" opacity="0.8" />
+    <circle cx="675" cy="102" r="2.5" fill="#6E7A85" opacity="0.75" />
+    <circle cx="715" cy="182" r="3" fill="#6E7A85" opacity="0.65" />
+    <circle cx="755" cy="42" r="2" fill="#6E7A85" opacity="0.7" />
+    <circle cx="825" cy="72" r="1.5" fill="#6E7A85" opacity="0.5" />
+    <circle cx="860" cy="125" r="2" fill="#6E7A85" opacity="0.45" />
+  </g>
+
+  <!-- Scrawled Marginalia / Chaotic Math Notes (Faded like Leonardo's notebooks) -->
+  <text x="55" y="48" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="9.5" font-style="italic" fill="#6E7A85" opacity="0.55" transform="rotate(-4 55 48)">"Ordo ab chao — cortex &amp; entropy"</text>
+  <text x="68" y="195" font-family="&#39;Courier New&#39;, monospace" font-size="8.5" fill="#9E7B66" opacity="0.6" transform="rotate(3 68 195)">dx/dt = σ(y - x)</text>
+  <text x="78" y="207" font-family="&#39;Courier New&#39;, monospace" font-size="8.5" fill="#9E7B66" opacity="0.6" transform="rotate(3 78 207)">dy/dt = x(ρ - z) - y</text>
+  <text x="690" y="24" font-family="&#39;Courier New&#39;, monospace" font-size="8.5" fill="#6E7A85" opacity="0.6" transform="rotate(-2 690 24)">S(t) = ∑ δ(t - tᵢᶠ)  [V_th = -55mV]</text>
+  <text x="735" y="218" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="9" font-style="italic" fill="#9E7B66" opacity="0.65" transform="rotate(-3 735 218)">Fig. IV — Spiking Cascade</text>
+
+  <!-- Classic Editorial Typography -->
+  <line x1="320" y1="240" x2="580" y2="240" stroke="#2C302E" stroke-width="0.5" stroke-opacity="0.25" />
+  
+  <text x="450" y="264" text-anchor="middle" font-family="Georgia, &#39;Palatino Linotype&#39;, &#39;Book Antiqua&#39;, serif" font-size="22" letter-spacing="6" fill="#2C302E">
+    Navid Vali
+  </text>
+  <text x="450" y="282" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="10.5" font-style="italic" letter-spacing="2.5" fill="#6E7A85">
+    Cortical Dynamics  ·  Chaotic Systems  ·  Software Architecture
+  </text>
+</svg>
