@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" height="100%">
+  <defs>
+    <!-- Soft Ivory Paper Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF9F6" />
+      <stop offset="50%" stop-color="#F4F1EA" />
+      <stop offset="100%" stop-color="#EAE6DF" />
+    </linearGradient>
+
+    <!-- Subtle Watercolour Wash (Warm Ochre & Slate) -->
+    <radialGradient id="wash-left" cx="38%" cy="45%" r="35%">
+      <stop offset="0%" stop-color="#B59B7C" stop-opacity="0.18" />
+      <stop offset="60%" stop-color="#D5C7B8" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="wash-right" cx="62%" cy="45%" r="35%">
+      <stop offset="0%" stop-color="#6E7A85" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#8FA0AE" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#FAF9F6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Classic Engraving Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#2C302E" stroke-width="0.4" stroke-opacity="0.07" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="280" rx="10" fill="url(#bg)" />
+  <rect width="900" height="280" rx="10" fill="url(#grid)" />
+
+  <!-- Artistic Color Washes -->
+  <circle cx="340" cy="125" r="220" fill="url(#wash-left)" />
+  <circle cx="560" cy="125" r="220" fill="url(#wash-right)" />
+
+  <!-- Outer Architectural / Da Vinci Framing -->
+  <rect x="14" y="14" width="872" height="252" rx="6" fill="none" stroke="#2C302E" stroke-width="0.75" stroke-opacity="0.25" />
+  <rect x="18" y="18" width="864" height="244" rx="4" fill="none" stroke="#B59B7C" stroke-width="0.5" stroke-opacity="0.4" />
+
+  <!-- Vitruvian / Golden Ratio Geometry Lines -->
+  <circle cx="450" cy="115" r="88" fill="none" stroke="#2C302E" stroke-width="0.6" stroke-dasharray="3,3" stroke-opacity="0.3" />
+  <circle cx="450" cy="115" r="105" fill="none" stroke="#B59B7C" stroke-width="0.5" stroke-opacity="0.35" />
+  <rect x="362" y="27" width="176" height="176" fill="none" stroke="#6E7A85" stroke-width="0.5" stroke-opacity="0.25" />
+  <line x1="220" y1="115" x2="680" y2="115" stroke="#2C302E" stroke-width="0.5" stroke-opacity="0.15" />
+  <line x1="450" y1="14" x2="450" y2="215" stroke="#2C302E" stroke-width="0.8" stroke-dasharray="2,4" stroke-opacity="0.4" />
+
+  <!-- LEFT HEMISPHERE: Organic Anatomical Sketch -->
+  <g fill="none" stroke="#2C302E" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer Cortical Outline -->
+    <path d="M 450,45 
+             C 415,42 385,55 372,82 
+             C 360,105 362,135 378,155 
+             C 392,172 415,178 432,175 
+             C 438,185 445,192 450,195" stroke-width="1.6" stroke-opacity="0.8" />
+    
+    <!-- Sulci & Gyri (Organic Brain Folds) -->
+    <path d="M 450,62 C 425,62 405,72 395,90 C 388,102 395,118 412,120 C 428,122 435,108 450,110" stroke-width="1.1" stroke-opacity="0.65" />
+    <path d="M 420,50 C 412,68 422,82 448,84" stroke-width="0.9" stroke-opacity="0.5" />
+    <path d="M 380,75 C 398,82 405,98 388,115 C 375,128 382,148 405,152" stroke-width="1.1" stroke-opacity="0.6" />
+    <path d="M 450,135 C 430,132 412,140 405,155 C 400,165 415,172 435,165" stroke-width="1.1" stroke-opacity="0.65" />
+    <path d="M 368,112 C 382,115 395,128 422,128" stroke-width="0.9" stroke-opacity="0.45" />
+    <!-- Brainstem / Cerebellum hint (Sepia ink) -->
+    <path d="M 412,174 C 415,186 430,192 448,188" stroke="#B59B7C" stroke-width="1.2" stroke-opacity="0.7" />
+    <path d="M 422,180 C 428,185 438,186 448,183" stroke="#B59B7C" stroke-width="0.8" stroke-opacity="0.6" />
+  </g>
+
+  <!-- RIGHT HEMISPHERE: The Twist (Geometric / Computational Cortex) -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Constellation Connections (Slate & Ochre) -->
+    <path d="M 450,45 L 485,52 L 515,72 L 530,105 L 522,142 L 498,168 L 468,176 L 450,195" stroke="#2C302E" stroke-width="1.4" stroke-opacity="0.75" />
+    <path d="M 450,62 L 485,52 L 478,85 L 515,72 L 502,112 L 530,105" stroke="#6E7A85" stroke-width="0.9" stroke-opacity="0.6" />
+    <path d="M 450,84 L 478,85 L 468,118 L 502,112 L 492,145 L 522,142" stroke="#6E7A85" stroke-width="0.9" stroke-opacity="0.6" />
+    <path d="M 450,110 L 468,118 L 450,135 L 492,145 L 468,176" stroke="#B59B7C" stroke-width="1" stroke-opacity="0.7" />
+    <path d="M 502,112 L 522,142 L 468,118" stroke="#2C302E" stroke-width="0.7" stroke-opacity="0.35" />
+    <path d="M 492,145 L 498,168 L 450,160" stroke="#6E7A85" stroke-width="0.8" stroke-opacity="0.5" />
+
+    <!-- Radiating Spiking / Vector Projections -->
+    <line x1="515" y1="72" x2="555" y2="55" stroke="#B59B7C" stroke-width="0.7" stroke-dasharray="2,2" />
+    <line x1="530" y1="105" x2="575" y2="105" stroke="#6E7A85" stroke-width="0.7" stroke-dasharray="2,2" />
+    <line x1="522" y1="142" x2="558" y2="158" stroke="#B59B7C" stroke-width="0.7" stroke-dasharray="2,2" />
+  </g>
+
+  <!-- Synaptic Nodes (Right Hemisphere) -->
+  <g>
+    <circle cx="450" cy="45" r="2.5" fill="#2C302E" />
+    <circle cx="485" cy="52" r="3" fill="#FAF9F6" stroke="#2C302E" stroke-width="1.5" />
+    <circle cx="515" cy="72" r="3.5" fill="#B59B7C" />
+    <circle cx="478" cy="85" r="2.5" fill="#6E7A85" />
+    <circle cx="530" cy="105" r="3" fill="#FAF9F6" stroke="#6E7A85" stroke-width="1.5" />
+    <circle cx="502" cy="112" r="4" fill="#2C302E" />
+    <circle cx="468" cy="118" r="2.5" fill="#B59B7C" />
+    <circle cx="522" cy="142" r="3" fill="#6E7A85" />
+    <circle cx="492" cy="145" r="3.5" fill="#FAF9F6" stroke="#B59B7C" stroke-width="1.5" />
+    <circle cx="498" cy="168" r="2.5" fill="#2C302E" />
+    <circle cx="468" cy="176" r="3" fill="#B59B7C" />
+    <circle cx="555" cy="55" r="2" fill="#B59B7C" opacity="0.7" />
+    <circle cx="575" cy="105" r="2" fill="#6E7A85" opacity="0.7" />
+    <circle cx="558" cy="158" r="2" fill="#B59B7C" opacity="0.7" />
+  </g>
+
+  <!-- Subtle Marginalia / Scientific Annotations -->
+  <text x="235" y="65" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="9" font-style="italic" fill="#6E7A85" opacity="0.7">Fig. I — Substantia Corticalis</text>
+  <text x="580" y="65" font-family="&#39;Courier New&#39;, monospace" font-size="8.5" fill="#6E7A85" opacity="0.7">∑ wᵢxᵢ + b → V(t)</text>
+  <text x="235" y="185" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="8.5" fill="#B59B7C" opacity="0.8">φ = 1.61803</text>
+  <text x="580" y="185" font-family="&#39;Courier New&#39;, monospace" font-size="8.5" fill="#B59B7C" opacity="0.8">τ dV/dt = -(V - V_rest)</text>
+
+  <!-- Main Typography (Classic Serif Title) -->
+  <text x="450" y="238" text-anchor="middle" font-family="Georgia, &#39;Palatino Linotype&#39;, &#39;Book Antiqua&#39;, serif" font-size="22" font-weight="normal" letter-spacing="5" fill="#2C302E">
+    YOUR NAME
+  </text>
+  <text x="450" y="256" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="10.5" font-style="italic" letter-spacing="2" fill="#6E7A85">
+    Biological Intelligence  ·  Computational Architecture  ·  Software Engineering
+  </text>
+</svg>
