@@ -107,7 +107,7 @@
 
   <!-- Main Typography (Classic Serif Title) -->
   <text x="450" y="238" text-anchor="middle" font-family="Georgia, &#39;Palatino Linotype&#39;, &#39;Book Antiqua&#39;, serif" font-size="22" font-weight="normal" letter-spacing="5" fill="#2C302E">
-    YOUR NAME
+    Navid Vali
   </text>
   <text x="450" y="256" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="10.5" font-style="italic" letter-spacing="2" fill="#6E7A85">
     Biological Intelligence  ·  Computational Architecture  ·  Software Engineering
